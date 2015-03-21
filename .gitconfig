@@ -1,0 +1,8 @@
+[user]
+  name = Tyler Neely
+  email = t@jujit.su
+[alias]
+  l = "log --name-only --graph --date=local"
+  b = branch
+  s = status
+  co = checkout
