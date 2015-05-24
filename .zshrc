@@ -1,10 +1,14 @@
-export GOPATH=$HOME/code/gopath
-export RUST_SRC_PATH=$HOME/code/rust/src
-export JAVA_HOME=$(/usr/libexec/java_home)
+export GOPATH=$HOME/src/go
+export RUST_SRC_PATH=$HOME/src/rust/src
+export JAVA_HOME=/usr/lib/jvm/default
 export ZSH=$HOME/.oh-my-zsh
-export PATH="$HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/.rvm/bin"
+
+export PATH="$HOME/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/.rvm/bin:$GOPATH/bin:$HOME/.gem/ruby/2.2.0/bin:/usr/bin/vendor_perl:$HOME/.cabal/bin"
 
 ZSH_THEME="minimal-tan"
+
+bindkey '^b' backward-word
+bindkey '^f' forward-word
 
 plugins=(git)
 

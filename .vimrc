@@ -9,15 +9,15 @@ nnoremap B ^
 nnoremap E $
 nnoremap ts :tab sball<CR>
 nnoremap tl :TlistToggle<CR>
-nnoremap tt :! ctags -R .<CR> :set tags=./tags<CR>
+nnoremap tt :! ctags -R .<CR> :set tags=./tags,tags;<CR>
+nnoremap tg :! starscope ./ ./Godeps; starscope -e ctags<CR> :set tags=./tags,tags;<CR>
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,*.jar,*/target/*
 set t_Co=256
 set shell=/bin/bash
-set tags=tags;/
+set tags=tags;
 set fillchars="vert:\ "
 set nocompatible
-set tags=./tags
 set number
 set ruler
 set ls=2            " always display filename on the ruler
@@ -27,6 +27,12 @@ set encoding=utf-8
 set autoindent
 set expandtab       " insert spaces instead of tab
 set smarttab        " use shiftwidth setting for inserting tabs
+
+" folding settings
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=0
 
 function! SetSpaces(nspaces)
   " need to use `let &' instead of `set' so that variables can be used
