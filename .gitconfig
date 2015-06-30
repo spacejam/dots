@@ -6,3 +6,4 @@
   b = branch
   s = status
   co = checkout
+  fr = "!git fetch && git rebase"

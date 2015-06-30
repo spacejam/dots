@@ -14,3 +14,6 @@ plugins=(git)
 
 source $HOME/.zshrc_work
 source $ZSH/oh-my-zsh.sh
+
+# Causes history to be shared, but not incrementally appended (oh-my-zsh default)
+setopt APPEND_HISTORY

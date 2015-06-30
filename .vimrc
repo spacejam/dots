@@ -10,7 +10,9 @@ nnoremap E $
 nnoremap ts :tab sball<CR>
 nnoremap tl :TlistToggle<CR>
 nnoremap tt :! ctags -R .<CR> :set tags=./tags,tags;<CR>
-nnoremap tg :! starscope ./ ./Godeps; starscope -e ctags<CR> :set tags=./tags,tags;<CR>
+
+command! W write
+command! Q quit
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,*.jar,*/target/*
 set t_Co=256
@@ -33,6 +35,20 @@ set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=0
+
+
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <C-t> <Plug>(go-def)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>e <Plug>(go-rename)
+au FileType go nmap <Leader>s <Plug>(go-implements)
 
 function! SetSpaces(nspaces)
   " need to use `let &' instead of `set' so that variables can be used
