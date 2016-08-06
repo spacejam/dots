@@ -40,7 +40,7 @@ myNumlockMask   = mod2Mask
 myWorkspaces    = ["α", "β" ,"γ", "δ", "ε", "ζ", "η", "θ", "ι"]
 -- myWorkspaces    = ["u", "www" ,"r", "4", "5", "6", "7", "8", "9"]
 myNormalBorderColor  = "#333"
-myFocusedBorderColor = "#800"
+myFocusedBorderColor = "#080"
 
 myKeys = \conf -> mkKeymap conf $
                 [ ("M-S-<Return>", spawn $ XMonad.terminal conf)
@@ -202,10 +202,10 @@ myManageHook = composeAll
 myLogHook h = do
   ewmhDesktopsLogHook
   dynamicLogWithPP $ oxyPP h
-  updatePointer (Relative (1/20) (1/20))
+  updatePointer ((1/20), (1/20)) (1, 1)
 
 oxyPP :: Handle -> PP
-oxyPP h = defaultPP  { ppCurrent = wrap "<fc=black,red> " " </fc>"
+oxyPP h = defaultPP  { ppCurrent = wrap "<fc=black,green> " " </fc>"
                      , ppSep     = ""
                      , ppWsSep = ""
                      , ppVisible = wrap "<fc=black,DarkSlateGray4> " " </fc>"
