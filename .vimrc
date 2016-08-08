@@ -36,6 +36,7 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=0
 
+let g:rustfmt_autosave = 1
 
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
