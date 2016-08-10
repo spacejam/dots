@@ -51,6 +51,9 @@ au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 au FileType go nmap <Leader>s <Plug>(go-implements)
 
+au FileType rust nmap <buffer> <C-]> <Plug>RacerGoToDefinitionDrect
+au FileType rust nmap <buffer> <C-t> :e#<CR>
+
 function! SetSpaces(nspaces)
   " need to use `let &' instead of `set' so that variables can be used
   let &shiftwidth=a:nspaces
