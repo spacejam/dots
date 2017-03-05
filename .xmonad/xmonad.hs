@@ -87,7 +87,7 @@ myKeys = \conf -> mkKeymap conf $
                 , ("M-x e",        spawn "emacsclient -c -s emacs")
                 , ("M-x s",        spawn "swiftfox")
                 , ("M-x t",        spawn "tvbrowser")
-                , ("M-x d",        spawn "deluge")
+                , ("M-i",          spawn "xcalib -i -a")
                 , ("M-x <Return>", spawn $ XMonad.terminal conf)
                 , ("M-w",          sendMessage MagnifyMore)
                 , ("M-e",          sendMessage MagnifyLess)
