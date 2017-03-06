@@ -2,6 +2,8 @@
   name = Tyler Neely
   email = t@jujit.su
   signingkey = 6A288D9A723CA8CC2386EE93F46E5D6787767778
+[commit]
+  gpgsign = true
 [alias]
   l = "log --name-only --graph --date=local"
   b = branch
