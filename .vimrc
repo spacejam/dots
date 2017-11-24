@@ -55,6 +55,9 @@ au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType rust nmap <buffer> <C-]> <Plug>RacerGoToDefinitionDrect
 au FileType rust nmap <buffer> <C-t> :e#<CR>
 
+" Maps Coquille commands to CoqIDE default key bindings
+au FileType coq call coquille#CoqideMapping()
+
 function! SetSpaces(nspaces)
   " need to use `let &' instead of `set' so that variables can be used
   let &shiftwidth=a:nspaces

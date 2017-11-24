@@ -40,7 +40,7 @@ myNumlockMask   = mod2Mask
 myWorkspaces    = ["α", "β" ,"γ", "δ", "ε", "ζ", "η", "θ", "ι"]
 -- myWorkspaces    = ["u", "www" ,"r", "4", "5", "6", "7", "8", "9"]
 myNormalBorderColor  = "#333"
-myFocusedBorderColor = "#080"
+myFocusedBorderColor = "#800"
 
 myKeys = \conf -> mkKeymap conf $
                 [ ("M-S-<Return>", spawn $ XMonad.terminal conf)
@@ -109,7 +109,7 @@ isVisible = do
 
 -- Config for Prompt
 oxyXPConfig :: XPConfig
-oxyXPConfig = defaultXPConfig { font              = "xft:terminus-10:bold"
+oxyXPConfig = def { font              = "xft:terminus-10:bold"
                               , bgColor           = "#0f0"
                               , fgColor           = "black"
                               , fgHLight          = "black"
@@ -163,9 +163,9 @@ myLayout = avoidStrutsOn[U] $ tabs
 
 -- Configuration for Tabbed
 oxyTheme :: Theme
-oxyTheme = defaultTheme { inactiveBorderColor = "#000"
+oxyTheme = def { inactiveBorderColor = "#000"
                         , activeBorderColor = myFocusedBorderColor
-                        , activeColor = "aquamarine3"
+                        , activeColor = "purple"
                         , inactiveColor = "DarkSlateGray4"
                         , inactiveTextColor = "#222"
                         , activeTextColor = "#222"
@@ -176,7 +176,7 @@ oxyTheme = defaultTheme { inactiveBorderColor = "#000"
                         }
 
 oxyDarkTheme :: Theme
-oxyDarkTheme = defaultTheme { inactiveBorderColor = "#777"
+oxyDarkTheme = def { inactiveBorderColor = "#777"
                             , activeBorderColor = myFocusedBorderColor
                             , activeColor = "#000"
                             , inactiveColor = "#444"
@@ -205,11 +205,11 @@ myLogHook h = do
   updatePointer ((1/20), (1/20)) (1, 1)
 
 oxyPP :: Handle -> PP
-oxyPP h = defaultPP  { ppCurrent = wrap "<fc=black,green> " " </fc>"
+oxyPP h = def  { ppCurrent = wrap "<fc=black,blue> " " </fc>"
                      , ppSep     = ""
                      , ppWsSep = ""
                      , ppVisible = wrap "<fc=black,DarkSlateGray4> " " </fc>"
-                     , ppLayout = \x -> "<fc=lightgreen,black>:: "
+                     , ppLayout = \x -> "<fc=lightblue,black>:: "
                                   ++ case x of
                                        "Mirror ResizableTall"   -> "MTiled"
                                        "ResizableTall"          -> "Tiled"
@@ -243,7 +243,7 @@ main = do
   pipe <- spawnPipe "xmobar"
   xmonad $ withUrgencyHook NoUrgencyHook $ defaults pipe
 
-defaults pipe = defaultConfig {
+defaults pipe = def {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,

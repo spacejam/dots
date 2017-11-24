@@ -2,8 +2,7 @@ Config { font = "ttf:terminus"
        , bgColor = "black"
        , fgColor = "Aquamarine3"
        , position = Top
-       , commands = [ Run Weather "LOWZ" ["-t","<station>: <tempC>°C, <skyCondition>","-L","18","-H","25","--normal","aquamarine3","--high","chocolate1","--low","lightgreen"] 36000
-                    , Run Network "wwp0s20f0u3i12" ["-L","0","-H","32","--normal","aquamarine2","--high","chocolate1"] 10
+       , commands = [ Run Weather "LOWZ" ["-t","<station>: <tempC>°C, <skyCondition>","-L","18","-H","25","--normal","aquamarine3","--high","chocolate1","--low","lightgreen"] 36000 
                     , Run Network "wlp4s0" ["-L","0","-H","32","--normal","aquamarine2","--high","chocolate1"] 10
                     , Run Cpu ["-L","15","-H","50","--normal","aquamarine1","--high","chocolate1"] 10
                     , Run Memory ["-t","Mem: <usedratio>"] 10
@@ -15,5 +14,5 @@ Config { font = "ttf:terminus"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{[%wwp0s20f0u3i12%%wlp4s0%][%battery%][%cpu%][%memory%]<fc=DarkSlateGray3>[ %date% ]</fc><fc=aquamarine3,black>[ %time% ]</fc>"
+       , template = "%StdinReader% }{[%wlp4s0%][%battery%][%cpu%][%memory%]<fc=DarkSlateGray3>[ %date% ]</fc><fc=aquamarine3,black>[ %time% ]</fc>"
        }
