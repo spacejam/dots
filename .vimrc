@@ -13,6 +13,7 @@ nnoremap tt :! ctags -R .<CR> :set tags=./tags,tags;<CR>
 
 command! W write
 command! Q quit
+command! Qall quitall
 
 set hidden          " don't save file every time we goto rust def
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,*.jar,*/target/*
