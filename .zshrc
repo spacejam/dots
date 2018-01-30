@@ -1,5 +1,5 @@
 export GOPATH=$HOME/src/go
-export RUST_SRC_PATH=$HOME/src/rust/src
+export RUST_SRC_PATH=$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src
 export JAVA_HOME=/usr/lib/jvm/default
 export ZSH=$HOME/.oh-my-zsh
 export RUST_BACKTRACE=1

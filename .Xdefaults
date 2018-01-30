@@ -33,9 +33,14 @@
 !------------------------------------------------------------------------------
 ! u r x v t
 
-URxvt*geometry:         112x22  
-URxvt*font:            xft:terminus:size=10
-URxvt*urlLauncher:         firefox  
-URxvt*scrollBar:        false
+URxvt*geometry:         112x22
+URxvt*font:               xft:xos4 terminus:size=13
+URxvt*urlLauncher:        firefox
+URxvt*scrollBar:          false
 URxvt*scrollBar_right:        true
 URxvt*scrollColor:        #000000
+
+URxvt.transparent:   true
+URxvt.tintColor:     white
+URxvt.cursorColor:   Red3
+URxvt.shading:       10

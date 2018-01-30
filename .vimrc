@@ -14,6 +14,7 @@ nnoremap tt :! ctags -R .<CR> :set tags=./tags,tags;<CR>
 command! W write
 command! Q quit
 
+set hidden          " don't save file every time we goto rust def
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,*.jar,*/target/*
 set t_Co=256
 set shell=/bin/bash
@@ -52,8 +53,11 @@ au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 au FileType go nmap <Leader>s <Plug>(go-implements)
 
-au FileType rust nmap <buffer> <C-]> <Plug>RacerGoToDefinitionDrect
 au FileType rust nmap <buffer> <C-t> :e#<CR>
+au FileType rust nmap <C-]> <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 " Maps Coquille commands to CoqIDE default key bindings
 au FileType coq call coquille#CoqideMapping()
