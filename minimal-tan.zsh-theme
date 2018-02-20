@@ -1,6 +1,6 @@
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}%{$fg[white]%}["
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
-ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}●%{$reset_color%}]%{$reset_color%} "
+ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}●%{$reset_color%}%{$fg[white]%}]%{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_CLEAN="]%{$reset_color%} "
 ZSH_THEME_SVN_PROMPT_PREFIX=$ZSH_THEME_GIT_PROMPT_PREFIX
 ZSH_THEME_SVN_PROMPT_SUFFIX=$ZSH_THEME_GIT_PROMPT_SUFFIX
@@ -14,6 +14,5 @@ vcs_status() {
         git_prompt_info
     fi
 }
-PROMPT='$FG[024]%! %y %2~ $(vcs_status)
+PROMPT='$FG[024]%2~ $(vcs_status)
 %(?.%{$FG[037]%}.%{$FG[197]%})λ%b '
-
