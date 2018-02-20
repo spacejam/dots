@@ -60,6 +60,10 @@ au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
+" print insertion
+au FileType rust nmap ! :s/^/\=printf("println!(\"%s:%d\");\n", expand('%'), line('.'))<CR>
+au FileType go nmap ! :s/^/\=printf("fmt.Println(\"%d\")\n", line('.'))<CR>
+
 " Maps Coquille commands to CoqIDE default key bindings
 au FileType coq call coquille#CoqideMapping()
 
