@@ -10,6 +10,7 @@ export PATH="$HOME/bin:\
 /usr/sbin:\
 /sbin:\
 /usr/local/bin:\
+$HOME/.local/bin:\
 $HOME/.cargo/bin:\
 $HOME/.rvm/bin:\
 $GOPATH/bin:\
@@ -35,9 +36,7 @@ unsetopt histverify
 # Causes history to be shared, but not incrementally appended (oh-my-zsh default)
 setopt APPEND_HISTORY
 
-setxkbmap -option "ctrl:nocaps"
-setxkbmap -option "altwin:swap_lalt_lwin"
-
+alias vim=nvim
 alias t='LOCATION_QUERY=yeh LOGFILE=/home/t/src/void/debug.log ~/src/void/target/release/void /home/t/Dropbox/t.db'
 alias cb='cargo build'
 alias tf='terraform'
