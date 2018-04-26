@@ -20,6 +20,8 @@ $HOME/.cabal/bin:/usr/bin/core_perl:\
 $HOME/.gem/ruby/2.3.0/bin"
 
 export LD_LIBRARY_PATH="/usr/local/lib"
+export KEYTIMEOUT=1
+export GPG_TTY=$(tty)
 
 ZSH_THEME="minimal-tan"
 
@@ -35,6 +37,15 @@ unsetopt histverify
 
 # Causes history to be shared, but not incrementally appended (oh-my-zsh default)
 setopt APPEND_HISTORY
+
+setxkbmap -option "ctrl:nocaps"
+setxkbmap -option "altwin:swap_lalt_lwin"
+
+# repeat rate
+# xset r off
+# fast rate
+xset -r r rate 380 80
+
 
 alias vim=nvim
 alias t='LOCATION_QUERY=yeh LOGFILE=/home/t/src/void/debug.log ~/src/void/target/release/void /home/t/Dropbox/t.db'

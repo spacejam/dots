@@ -25,28 +25,45 @@ if exists("syntax_on")
 endif
 let g:colors_name="icefall"
 
-" #augroup Syntax_extensions
-" #    au!
-" #    au Syntax c,cpp,ruby,javascript syn match Operator "[*/%&|!=><^~,.;:?+-]\+" display contains=TOP
-" #    au Syntax c,cpp syn region cParen matchgroup=Operator transparent start='(' end=')' contains=ALLBUT,@cParenGroup,cCppParen,cErrInBracket,cCppBracket,cCppString,@Spell
-" #    au Syntax c,cpp syn region cCppParen matchgroup=Operator transparent start='(' skip='\\$' excludenl end=')' end='$' contained contains=ALLBUT,@cParenGroup,cErrInBracket,cParen,cBracket,cString,@Spell
-" #    au Syntax c,cpp syn region cBracket matchgroup=Operator transparent start='\[\|<::\@!' end=']\|:>' contains=ALLBUT,@cParenGroup,cErrInParen,cCppParen,cCppBracket,cCppString,@Spell
-" #    au Syntax c,cpp syn region cCppBracket matchgroup=Operator transparent start='\[\|<::\@!' skip='\\$' excludenl end=']\|:>' end='$' contained contains=ALLBUT,@cParenGroup,cErrInParen,cParen,cBracket,cString,@Spell
-" #    au Syntax c,cpp syn region cBlock matchgroup=OperatorCurlyBrackets start="{" end="}" transparent fold
-" #    au Syntax ruby syn match rubyBlockParameter "\%(\%(\<do\>\|{\)\s*\)\@<=|\s*[( ,a-zA-Z0-9_*)]\+\ze\s*|"hs=s+1 display
-" #    au Syntax ruby syn region rubyCurlyBlock matchgroup=Operator start="{" end="}" contains=ALLBUT,@rubyExtendedStringSpecial,rubyTodo fold
-" #    au Syntax ruby syn region rubyParentheses matchgroup=Operator start="(" end=")" contains=ALLBUT,@rubyExtendedStringSpecial,rubyTodo
-" #    au Syntax ruby syn region rubySquareBrackets matchgroup=Operator start="\[" end="\]" contains=ALLBUT,@rubyExtendedStringSpecial,rubyTodo
-" #    au Syntax javascript syn region javascriptCurlyBrackets matchgroup=Operator start="{" end="}" transparent fold
-" #    au Syntax javascript syn region javascriptParentheses matchgroup=Operator start="(" end=")" transparent
-" #    au Syntax javascript syn region javascriptSquareBrackets matchgroup=Operator start="\[" end="\]" transparent
-" #augroup END
+hi Comment          cterm=none                   ctermfg=89
+hi Constant         cterm=none                   ctermfg=159
+hi String           cterm=none                   ctermfg=30
+hi Character        cterm=none                   ctermfg=30
+hi Number           cterm=none                   ctermfg=33
+hi Float            cterm=none                   ctermfg=33
+hi Identifier       cterm=none                   ctermfg=285
+hi Function         cterm=none                   ctermfg=280
+hi Statement        cterm=none                   ctermfg=281
+hi Exception        cterm=none                   ctermfg=195
+hi Operator         cterm=none                   ctermfg=70
+hi Label            cterm=none                   ctermfg=63
+hi PreProc          cterm=none                   ctermfg=194
+hi Type             cterm=none                   ctermfg=74
+hi Special          cterm=none                   ctermfg=89
+hi Underlined       cterm=underline              ctermfg=227
+hi Ignore           cterm=none                   ctermfg=235
+hi Error            cterm=none       ctermbg=52  ctermfg=231
+hi Todo             cterm=bold       ctermbg=30  ctermfg=16
 
-if !has("gui_running")
-
-hi rubyGlobalVariable       cterm=none                   ctermfg=64
-hi rubyPredefinedIdentifier cterm=none                   ctermfg=64
-hi def link rubyStringDelimiter String
+hi hsComment          cterm=none                   ctermfg=89
+hi hsConstant         cterm=none                   ctermfg=159
+hi hsString           cterm=none                   ctermfg=30
+hi hsCharacter        cterm=none                   ctermfg=30
+hi hsNumber           cterm=none                   ctermfg=33
+hi hsFloat            cterm=none                   ctermfg=33
+hi hsIdentifier       cterm=none                   ctermfg=285
+hi hsFunction         cterm=none                   ctermfg=280
+hi hsStatement        cterm=none                   ctermfg=281
+hi hsException        cterm=none                   ctermfg=195
+hi hsOperator         cterm=none                   ctermfg=70
+hi hsLabel            cterm=none                   ctermfg=63
+hi hsPreProc          cterm=none                   ctermfg=194
+hi hsType             cterm=none                   ctermfg=74
+hi hsSpecial          cterm=none                   ctermfg=89
+hi hsUnderlined       cterm=underline              ctermfg=227
+hi hsIgnore           cterm=none                   ctermfg=235
+hi hsError            cterm=none       ctermbg=52  ctermfg=231
+hi hsTodo             cterm=bold       ctermbg=89  ctermfg=89
 
 hi Normal           cterm=none       ctermbg=232 ctermfg=189
 hi StatusLine       cterm=none       ctermbg=236 ctermfg=231
@@ -90,26 +107,6 @@ hi SpellCap         cterm=none       ctermbg=18
 hi SpellLocal       cterm=none       ctermbg=30
 hi SpellRare        cterm=none       ctermbg=90
 
-hi Comment          cterm=none                   ctermfg=45
-hi Constant         cterm=none                   ctermfg=159
-hi String           cterm=none                   ctermfg=30
-hi Character        cterm=none                   ctermfg=30
-hi Number           cterm=none                   ctermfg=33
-hi Float            cterm=none                   ctermfg=33
-hi Identifier       cterm=none                   ctermfg=285
-hi Function         cterm=none                   ctermfg=280
-hi Statement        cterm=none                   ctermfg=281
-hi Exception        cterm=none                   ctermfg=195
-hi Operator         cterm=none                   ctermfg=160
-hi Label            cterm=none                   ctermfg=63
-hi PreProc          cterm=none                   ctermfg=194
-hi Type             cterm=none                   ctermfg=71
-hi Special          cterm=none       ctermbg=235 ctermfg=87
-hi Underlined       cterm=underline              ctermfg=227
-hi Ignore           cterm=none                   ctermfg=235
-hi Error            cterm=none       ctermbg=52  ctermfg=231
-hi Todo             cterm=bold       ctermbg=143 ctermfg=16
-
 hi OperatorCurlyBrackets cterm=bold ctermfg=75
 
 " highlight modes
@@ -126,88 +123,4 @@ autocmd CmdwinLeave * hi User2      ctermbg=236
 autocmd CmdwinLeave * hi User1      ctermbg=236
 autocmd CmdwinLeave * hi StatusLine ctermbg=236
 
-else
 
-hi rubyGlobalVariable       gui=none                   guifg=#5f8700
-hi rubyPredefinedIdentifier gui=bold                   guifg=#5f8700
-hi def link rubyStringDelimiter String
-
-hi Normal           gui=none       guibg=#080808 guifg=#dfdfff
-hi StatusLine       gui=none       guibg=#303030 guifg=#ffffff
-hi StatusLineNC     gui=none       guibg=#303030 guifg=#8787af
-hi User1            gui=bold       guibg=#303030 guifg=#ffdfaf
-hi User2            gui=none       guibg=#303030 guifg=#585858
-hi VertSplit        gui=none       guibg=#303030 guifg=#8787af
-hi TabLine          gui=none       guibg=#303030 guifg=#afafaf
-hi TabLineFill      gui=none       guibg=#303030
-hi TabLineSel       gui=none       guibg=#585858 guifg=#dadada
-hi LineNr           gui=none                   guifg=#444444
-hi NonText          gui=bold       guibg=#121212 guifg=#606060
-hi Folded           gui=none       guibg=#1c1c1c guifg=#af8700
-hi FoldColumn       gui=none       guibg=#303030 guifg=#8787af
-hi SignColumn       gui=none       guibg=#303030 guifg=#8787af
-hi CursorColumn     gui=none       guibg=#1c1c1c
-hi CursorLine       gui=none       guibg=#1c1c1c
-hi IncSearch        gui=bold       guibg=#5f5fff  guifg=#080808
-hi Search           gui=none       guibg=#00af87  guifg=#080808
-hi Visual           gui=none       guibg=#005f87
-hi WildMenu         gui=bold       guibg=#00af5f  guifg=#080808
-hi ModeMsg          gui=bold                   guifg=#87afdf
-hi MoreMsg          gui=bold                   guifg=#87ffaf
-hi Question         gui=bold                   guifg=#87ffaf
-hi ErrorMsg         gui=none       guibg=#870000  guifg=#eeeeee
-hi WarningMsg       gui=none       guibg=#5f5f00  guifg=#eeeeee
-hi SpecialKey       gui=none                   guifg=#5fdf5f
-hi Title            gui=bold                   guifg=#afafff
-hi Directory                                     guifg=#8787ff
-hi DiffAdd          gui=none       guibg=#000087
-hi DiffChange       gui=none       guibg=#5f5f00
-hi DiffDelete       gui=none       guibg=#5f0000  guifg=#5f5f00
-hi DiffText         gui=none       guibg=#5f005f
-hi Pmenu            gui=none       guibg=#00005f  guifg=#87ffaf
-hi PmenuSel         gui=none       guibg=#005f87  guifg=#87ffaf
-hi PmenuSbar        gui=none       guibg=#0000af
-hi PmenuThumb       gui=none       guibg=#00afaf
-hi MatchParen       gui=bold       guibg=#005f87
-hi SpellBad         gui=none       guibg=#870000
-hi SpellCap         gui=none       guibg=#000087
-hi SpellLocal       gui=none       guibg=#008787
-hi SpellRare        gui=none       guibg=#870087
-
-hi Comment          gui=none                   guifg=#af8787
-hi Constant         gui=none                   guifg=#ffaf5f
- hi String          gui=none       guibg=#262626 guifg=#ffaf5f
- hi Character       gui=none       guibg=#262626 guifg=#ffaf5f
- hi Number          gui=none                   guifg=#00af00
- hi Float           gui=none                   guifg=#00df5f
-hi Identifier       gui=none                   guifg=#dfdf87
- hi Function        gui=none                   guifg=#ff8787
-hi Statement        gui=bold                   guifg=#5f5fff
- hi Exception       gui=bold                   guifg=#875fff
- hi Operator        gui=none                   guifg=#5fafff
- hi Label           gui=none                   guifg=#5f5fff
-hi PreProc          gui=bold                   guifg=#00af87
-hi Type             gui=bold                   guifg=#5faf5f
-hi Special          gui=none       guibg=#262626 guifg=#5fffff
-hi Underlined       gui=underline              guifg=#ffff5f
-hi Ignore           gui=bold                   guifg=#262626
-hi Error            gui=bold       guibg=#5f0000  guifg=#ffffff
-hi Todo             gui=bold       guibg=#afaf5f guifg=#000000
-
-hi OperatorCurlyBrackets gui=bold guifg=#5fafff
-
-" highlight modes
-autocmd InsertEnter * hi StatusLine guibg=#5f0000
-autocmd InsertEnter * hi User1      guibg=#5f0000
-autocmd InsertEnter * hi User2      guibg=#5f0000
-autocmd InsertLeave * hi User2      guibg=#303030
-autocmd InsertLeave * hi User1      guibg=#303030
-autocmd InsertLeave * hi StatusLine guibg=#303030
-autocmd CmdwinEnter * hi StatusLine guibg=#005f00
-autocmd CmdwinEnter * hi User1      guibg=#005f00
-autocmd CmdwinEnter * hi User2      guibg=#005f00
-autocmd CmdwinLeave * hi User2      guibg=#303030
-autocmd CmdwinLeave * hi User1      guibg=#303030
-autocmd CmdwinLeave * hi StatusLine guibg=#303030
-
-end
