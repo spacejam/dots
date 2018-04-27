@@ -25,21 +25,21 @@ if exists("syntax_on")
 endif
 let g:colors_name="icefall"
 
-hi Comment          cterm=none                   ctermfg=89
-hi Constant         cterm=none                   ctermfg=159
+hi Comment          cterm=none                   ctermfg=52
+hi Constant         cterm=none                   ctermfg=231  " self, block comments, newtype literals
 hi String           cterm=none                   ctermfg=30
 hi Character        cterm=none                   ctermfg=30
 hi Number           cterm=none                   ctermfg=33
 hi Float            cterm=none                   ctermfg=33
-hi Identifier       cterm=none                   ctermfg=285
-hi Function         cterm=none                   ctermfg=280
-hi Statement        cterm=none                   ctermfg=281
-hi Exception        cterm=none                   ctermfg=195
-hi Operator         cterm=none                   ctermfg=70
-hi Label            cterm=none                   ctermfg=63
-hi PreProc          cterm=none                   ctermfg=194
-hi Type             cterm=none                   ctermfg=74
-hi Special          cterm=none                   ctermfg=89
+hi Identifier       cterm=none                   ctermfg=231  " type definitions
+hi Type             cterm=none                   ctermfg=231  " type constraints, derive, static
+hi PreProc          cterm=none                   ctermfg=194  " macros, attributes, types
+hi Function         cterm=none                   ctermfg=none " function call
+hi Statement        cterm=none                   ctermfg=26   " for if else fn
+hi Exception        cterm=none                   ctermfg=194  " unsafe
+hi Operator         cterm=none                   ctermfg=160
+hi Label            cterm=none                   ctermfg=136
+hi Special          cterm=none                   ctermfg=89    " dots in between, lifetimes
 hi Underlined       cterm=underline              ctermfg=227
 hi Ignore           cterm=none                   ctermfg=235
 hi Error            cterm=none       ctermbg=52  ctermfg=231
