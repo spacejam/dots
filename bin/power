@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+
+def get_bat(bat)
+  values = {}
+  name = bat.lines[0].split[1]
+  bat.each_line { |line|
+    if line.start_with? "    "
+      stripped = line.strip
+      begin
+        k, v = stripped.split(":")
+        values[k.strip] = v.strip
+      rescue
+      end
+    end
+  }
+  energy = values["energy"].split[0].to_f
+  rate = values["energy-rate"].split[0].to_f
+  return {"energy" => energy, "energy-rate" => rate}
+end
+
+bats = [0, 1].map { |n|
+  `upower -i /org/freedesktop/UPower/devices/battery_BAT#{n}`
+}.map { |bat|
+  get_bat(bat)
+}
+total_energy = bats.inject(0) {|n, bat| bat["energy"] + n}
+total_rate = bats.inject(0) {|n, bat| bat["energy-rate"] + n}
+minutes = total_energy / total_rate * 60
+puts "#{minutes.to_i} minutes left"
+

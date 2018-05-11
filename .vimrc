@@ -4,11 +4,7 @@ filetype plugin indent on
 
 nnoremap <C-n> :tabnext<CR>
 nnoremap <C-m> :tabprevious<CR>
-nnoremap <C-o> :%s/\s\+$<CR>
-nnoremap B ^
-nnoremap E $
 nnoremap ts :tab sball<CR>
-nnoremap tl :TlistToggle<CR>
 nnoremap tt :! ctags -R .<CR> :set tags=./tags,tags;<CR>
 
 command! W write
@@ -19,10 +15,10 @@ set hidden          " don't save file every time we goto rust def
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,*.jar,*/target/*
 set t_Co=256
 set shell=/bin/bash
-set tags=tags;
+set tags=.haskelltags;tags;/,codex.tags;/
 set fillchars="vert:\ "
 set nocompatible
-set number
+set number relativenumber
 set ruler
 set ls=2            " always display filename on the ruler
 set nowrap          " let the world see long lines for what they are
@@ -31,6 +27,12 @@ set encoding=utf-8
 set autoindent
 set expandtab       " insert spaces instead of tab
 set smarttab        " use shiftwidth setting for inserting tabs
+set scrolloff=10
+
+" incremental search and replace
+if has("nvim")
+  set inccommand=nosplit
+endif
 
 " folding settings
 set foldmethod=indent
@@ -40,6 +42,7 @@ set foldlevel=0
 
 let g:rustfmt_autosave = 1
 let g:rainbow_active = 1
+let $NVIM_TUI_ENABLE_TRUE_COLOR=0
 
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
@@ -63,9 +66,7 @@ au FileType rust nmap <leader>gd <Plug>(rust-doc)
 " print insertion
 au FileType rust nmap ! :s/^/\=printf("println!(\"%s:%d\");\n", expand('%'), line('.'))<CR>
 au FileType go nmap ! :s/^/\=printf("fmt.Println(\"%d\")\n", line('.'))<CR>
-
-" Maps Coquille commands to CoqIDE default key bindings
-au FileType coq call coquille#CoqideMapping()
+au FileType haskell nmap ! :s/^/\=printf("traceM $ \"%s:%d\" \n", expand('%'), line('.'))<CR>
 
 function! SetSpaces(nspaces)
   " need to use `let &' instead of `set' so that variables can be used
@@ -75,6 +76,23 @@ function! SetSpaces(nspaces)
 endfunction
 
 call SetSpaces(2)
+
+" Remove trailing whitespace on save
+autocmd BufWritePre * call s:StripTrailing()
+function! s:StripTrailing()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfunction
+
+if executable('haskell-tags')
+  au BufWritePost *.hs  silent !haskell-tags % '.haskelltags'
+  au BufWritePost *.hsc silent !haskell-tags % '.haskelltags'
+endif
+
 autocmd BufEnter *.py call SetSpaces(4)
 autocmd BufLeave *.py call SetSpaces(2)
+autocmd BufEnter *.hs call SetSpaces(4)
+autocmd BufLeave *.hs call SetSpaces(2)
 execute pathogen#infect()
