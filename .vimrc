@@ -7,6 +7,14 @@ nnoremap <C-m> :tabprevious<CR>
 nnoremap ts :tab sball<CR>
 nnoremap tt :! ctags -R .<CR> :set tags=./tags,tags;<CR>
 
+" center after jump
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap gg ggzz
+nnoremap G Gzz
+nnoremap <C-o> <C-o>zz
+nnoremap <C-i> <C-i>zz
+
 command! W write
 command! Q quit
 command! Qall quitall
@@ -17,8 +25,8 @@ set t_Co=256
 set shell=/bin/bash
 set tags=.haskelltags;tags;/,codex.tags;/
 set fillchars="vert:\ "
+set number
 set nocompatible
-set number relativenumber
 set ruler
 set ls=2            " always display filename on the ruler
 set nowrap          " let the world see long lines for what they are
@@ -95,4 +103,5 @@ autocmd BufEnter *.py call SetSpaces(4)
 autocmd BufLeave *.py call SetSpaces(2)
 autocmd BufEnter *.hs call SetSpaces(4)
 autocmd BufLeave *.hs call SetSpaces(2)
+
 execute pathogen#infect()
