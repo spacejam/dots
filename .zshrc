@@ -56,6 +56,7 @@ alias gt='go test -race $(glide novendor)'
 alias cfn="find . | awk '{ FS=\"/\"; print \$2 }' | sort | uniq -c | sort -n"
 alias dud="du -d1 | sort -n | awk '{print \$2}' | xargs -n1 du -h -d0"
 alias rmtarget='find . -type d -name "*target" -exec rm -rf {} \;'
+alias tmux="tmux -u"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f /home/t/src/google-cloud-sdk/path.zsh.inc ]; then
