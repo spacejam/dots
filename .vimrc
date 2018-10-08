@@ -6,6 +6,7 @@ nnoremap <C-n> :tabnext<CR>
 nnoremap <C-m> :tabprevious<CR>
 nnoremap ts :tab sball<CR>
 nnoremap tt :! ctags -R .<CR> :set tags=./tags,tags;<CR>
+nmap f <Plug>(easymotion-s2)
 
 " center after jump
 nnoremap n nzz
@@ -14,6 +15,7 @@ nnoremap gg ggzz
 nnoremap G Gzz
 nnoremap <C-o> <C-o>zz
 nnoremap <C-i> <C-i>zz
+nnoremap <C-j> :lnext<CR>zz
 
 command! W write
 command! Q quit
@@ -47,6 +49,16 @@ set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=0
+
+" Syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 let g:rustfmt_autosave = 1
 let g:rainbow_active = 1
