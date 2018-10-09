@@ -38,7 +38,8 @@ set autoindent
 set expandtab       " insert spaces instead of tab
 set smarttab        " use shiftwidth setting for inserting tabs
 set scrolloff=10
-set rtp=~/.vim
+set rtp=~/.vim      " workaround for osx messing up load ordering for me
+set mouse=a         " use mouse to scroll in the buffer
 
 " incremental search and replace
 if has("nvim")
