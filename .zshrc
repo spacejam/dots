@@ -3,6 +3,8 @@ export RUST_SRC_PATH=$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/li
 export JAVA_HOME=/usr/lib/jvm/default
 export ZSH=$HOME/.oh-my-zsh
 export RUST_BACKTRACE=1
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 export PATH="$HOME/bin:\
 /usr/bin:\
@@ -56,7 +58,7 @@ alias gt='go test -race $(glide novendor)'
 alias cfn="find . | awk '{ FS=\"/\"; print \$2 }' | sort | uniq -c | sort -n"
 alias dud="du -d1 | sort -n | awk '{print \$2}' | xargs -n1 du -h -d0"
 alias rmtarget='find . -type d -name "*target" -exec rm -rf {} \;'
-alias tmux="tmux -u"
+alias tmux='tmux -u'
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f /home/t/src/google-cloud-sdk/path.zsh.inc ]; then
@@ -67,9 +69,6 @@ fi
 if [ -f /home/t/src/google-cloud-sdk/completion.zsh.inc ]; then
   source "$HOME/src/google-cloud-sdk/completion.zsh.inc"
 fi
-
-export GOOGLE_CREDENTIALS=$(cat "$HOME/.config/gcloud/ck8s-4002943ba12d.json")
-export GOOGLE_PROJECT=ck8s-152921
 
 function retry {
   while true; do $*; if [ $? -ne 0 ]; then break; fi; done

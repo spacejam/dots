@@ -38,6 +38,7 @@ set autoindent
 set expandtab       " insert spaces instead of tab
 set smarttab        " use shiftwidth setting for inserting tabs
 set scrolloff=10
+set rtp=~/.vim
 
 " incremental search and replace
 if has("nvim")
@@ -116,4 +117,5 @@ autocmd BufLeave *.py call SetSpaces(2)
 autocmd BufEnter *.hs call SetSpaces(4)
 autocmd BufLeave *.hs call SetSpaces(2)
 
+source ~/.vim/autoload/pathogen.vim
 execute pathogen#infect()
