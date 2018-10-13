@@ -64,6 +64,8 @@ let g:syntastic_check_on_wq = 0
 
 let g:rustfmt_autosave = 1
 let g:rainbow_active = 1
+let g:racer_experimental_completer = 1
+
 let $NVIM_TUI_ENABLE_TRUE_COLOR=0
 
 au FileType go nmap <Leader>i <Plug>(go-info)
