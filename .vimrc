@@ -63,6 +63,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:rustfmt_autosave = 1
+let g:rust_cargo_check_tests = 1
 let g:rainbow_active = 1
 let g:racer_experimental_completer = 1
 
