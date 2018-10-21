@@ -7,6 +7,7 @@ nnoremap <C-m> :tabprevious<CR>
 nnoremap ts :tab sball<CR>
 nnoremap tt :! ctags -R .<CR> :set tags=./tags,tags;<CR>
 nmap f <Plug>(easymotion-s2)
+nmap <F1> <nop>
 
 " center after jump
 nnoremap n nzz

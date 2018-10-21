@@ -2,6 +2,8 @@ export GOPATH=$HOME/src/go
 export JAVA_HOME=/usr/lib/jvm/default
 export ZSH=$HOME/.oh-my-zsh
 export RUST_BACKTRACE=1
+export RUSTFLAGS="-C target-cpu=native"
+export RUSTC_WRAPPER=sccache
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
@@ -39,16 +41,7 @@ unsetopt histverify
 # Causes history to be shared, but not incrementally appended (oh-my-zsh default)
 setopt APPEND_HISTORY
 
-setxkbmap -option "ctrl:nocaps"
-setxkbmap -option "altwin:swap_lalt_lwin"
-
-# repeat rate
-# xset r off
-# fast rate
-xset -r r rate 380 80
-
-
-alias vim=nvim
+alias vim='nvim'
 alias t='LOCATION_QUERY=yeh LOGFILE=/home/t/src/void/debug.log ~/src/void/target/release/void /home/t/Dropbox/t.db'
 alias cb='cargo build'
 alias tf='terraform'
@@ -58,7 +51,7 @@ alias cfn="find . | awk '{ FS=\"/\"; print \$2 }' | sort | uniq -c | sort -n"
 alias dud="du -d1 | sort -n | awk '{print \$2}' | xargs -n1 du -h -d0"
 alias rmtarget='find . -type d -name "*target" -exec rm -rf {} \;'
 alias tmux='tmux -u'
-alias v='vim `fzf --preview "cat {}"`'
+alias v='vim `sk`'
 alias cachegrind='valgrind --tool=cachegrind'
 alias callgrind='valgrind --tool=callgrind --dump-instr=yes --collect-jumps=yes --simulate-cache=yes'
 
