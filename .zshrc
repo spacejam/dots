@@ -33,7 +33,6 @@ bindkey '^f' forward-word
 
 plugins=(git)
 
-source $HOME/.zshrc_work
 source $ZSH/oh-my-zsh.sh
 source $HOME/.cargo/env
 unsetopt histverify
