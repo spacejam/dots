@@ -40,7 +40,7 @@ unsetopt histverify
 # Causes history to be shared, but not incrementally appended (oh-my-zsh default)
 setopt APPEND_HISTORY
 
-alias vim='nvim'
+alias vim=nvim
 alias t='LOCATION_QUERY=yeh LOGFILE=/home/t/src/void/debug.log ~/src/void/target/release/void /home/t/Dropbox/t.db'
 alias cb='cargo build'
 alias tf='terraform'

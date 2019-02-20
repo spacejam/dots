@@ -22,6 +22,11 @@ command! W write
 command! Q quit
 command! Qall quitall
 
+set undodir=~/.vim/undodir
+set undofile
+set undolevels=1000
+set undoreload=10000
+
 set hidden          " don't save file every time we goto rust def
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,*.jar,*/target/*
 set t_Co=256
@@ -60,12 +65,12 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
+let g:rainbow_active = 1
 let g:rustfmt_autosave = 1
 let g:rust_cargo_check_tests = 1
-let g:rainbow_active = 1
 let g:racer_experimental_completer = 1
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=0

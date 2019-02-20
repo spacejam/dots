@@ -30,17 +30,17 @@ import XMonad.Util.EZConfig
 import XMonad.Actions.Warp
 import Data.Ratio
 
-myTerminal      = "urxvt"
+myTerminal      = "alacritty"
 myScreenLock    = "/usr/bin/gnome-screensaver-command -l"
 myBorderWidth   = 1
 myModMask       = mod4Mask
 myNumlockMask   = mod2Mask
--- myWorkspaces    = ["Σ" ,"ϟ", "λ", "ϣ", "ж", "Ϡ", "ϻ"]
+myWorkspaces    = ["☠" ,"ϟ", "λ", "x", "ж", "Ϡ", "ϻ"]
 -- myWorkspaces    = ["⚒", "Σ" ,"ϟ", "λ", "ϣ", "ж", "Ϡ", "♬", "ϻ"]
-myWorkspaces    = ["α", "β" ,"γ", "δ", "ε", "ζ", "η", "θ", "ι"]
+-- myWorkspaces    = ["α", "β" ,"γ", "δ", "ε", "ζ", "η", "θ", "ι"]
 -- myWorkspaces    = ["u", "www" ,"r", "4", "5", "6", "7", "8", "9"]
 myNormalBorderColor  = "#333"
-myFocusedBorderColor = "#800"
+myFocusedBorderColor = "#00afff"
 
 myKeys = \conf -> mkKeymap conf $
                 [ ("M-S-<Return>", spawn $ XMonad.terminal conf)
@@ -84,9 +84,6 @@ myKeys = \conf -> mkKeymap conf $
                 , ("M-x c",        kill)
                 , ("M-x M-x",      nextScreen)
                 , ("M-u M-x M-x",  swapNextScreen)
-                , ("M-x e",        spawn "emacsclient -c -s emacs")
-                , ("M-x s",        spawn "swiftfox")
-                , ("M-x t",        spawn "tvbrowser")
                 , ("M-i",          spawn "xcalib -i -a")
                 , ("M-x <Return>", spawn $ XMonad.terminal conf)
                 , ("M-w",          sendMessage MagnifyMore)
@@ -109,17 +106,17 @@ isVisible = do
 
 -- Config for Prompt
 oxyXPConfig :: XPConfig
-oxyXPConfig = def { font              = "xft:terminus-10:bold"
-                              , bgColor           = "#0f0"
-                              , fgColor           = "black"
-                              , fgHLight          = "black"
-                              , bgHLight          = "darkslategray4"
-                              , borderColor       = "black"
-                              , promptBorderWidth = 1
-                              , position          = Top
-                              , height            = 20
-                              , defaultText       = []
-                              }
+oxyXPConfig = def { font              = "xft:xos4 terminus:size=10" -- "xft:terminus-10:bold"
+                  , bgColor           = "#0f0"
+                  , fgColor           = "black"
+                  , fgHLight          = "black"
+                  , bgHLight          = "darkslategray4"
+                  , borderColor       = "black"
+                  , promptBorderWidth = 1
+                  , position          = Top
+                  , height            = 20
+                  , defaultText       = []
+                  }
 
 myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- mod-button1, Set the window to floating mode and move by dragging
@@ -169,7 +166,7 @@ oxyTheme = def { inactiveBorderColor = "#000"
                         , inactiveColor = "DarkSlateGray4"
                         , inactiveTextColor = "#222"
                         , activeTextColor = "#222"
-                        , fontName = "xft:terminus-10:bold"
+                        , fontName = "xft:xos4 terminus:size=10" -- "xft:terminus-10:bold"
                         , decoHeight = 18
                         , urgentColor = "#000"
                         , urgentTextColor = "#63b8ff"
