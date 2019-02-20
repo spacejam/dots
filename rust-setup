@@ -1,0 +1,17 @@
+get rust:
+	rustup
+  rustup toolchain add nightly
+  rustup component add clippy-preview
+  rustup component add rust-src
+  rustup component add rustfmt-preview
+  cargo +nightly install racer
+  cargo install cargo-watch
+  cargo install cargo-edit
+  cargo install skim
+  cargo install voidmap
+  cargo install ripgrep
+
+setup vim:
+	rust.vim
+	vim-racer
+	syntastic
