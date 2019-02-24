@@ -6,6 +6,7 @@ export RUSTFLAGS="-C target-cpu=native"
 export RUSTC_WRAPPER=sccache
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+export SKIM_DEFAULT_COMMAND="rg --files"
 
 export PATH="$HOME/bin:\
 /usr/bin:\
