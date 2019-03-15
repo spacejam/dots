@@ -44,6 +44,7 @@ setopt APPEND_HISTORY
 alias vim=nvim
 alias t='LOCATION_QUERY=yeh LOGFILE=/home/t/src/void/debug.log ~/src/void/target/release/void /home/t/Dropbox/t.db'
 alias cb='cargo build'
+alias cw="cargo watch -s 'clear; cargo check --tests --color=always 2>&1 | head -40'"
 alias tf='terraform'
 alias ec='etcdctl'
 alias gt='go test -race $(glide novendor)'
