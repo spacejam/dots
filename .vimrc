@@ -2,6 +2,7 @@ syntax enable
 colorscheme icefall
 filetype plugin indent on
 
+nnoremap <C-v> :read !xclip -o<CR>
 nnoremap <C-n> :tabnext<CR>
 nnoremap <C-m> :tabprevious<CR>
 nnoremap ts :tab sball<CR>
