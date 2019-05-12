@@ -1,3 +1,4 @@
+export CDPATH=.:~/src/sled/crates
 export GOPATH=$HOME/src/go
 export JAVA_HOME=/usr/lib/jvm/default
 export ZSH=$HOME/.oh-my-zsh
