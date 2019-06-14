@@ -8,6 +8,8 @@ export RUSTC_WRAPPER=sccache
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export SKIM_DEFAULT_COMMAND="rg --files"
+export SCCACHE_DIR=/Users/tylerneely/Library/Caches/Mozilla.sccache
+export SCCACHE_CACHE_SIZE=53687091200
 
 export PATH="$HOME/bin:\
 /usr/bin:\
@@ -22,7 +24,8 @@ $GOPATH/bin:\
 $HOME/.gem/ruby/2.2.0/bin:\
 /usr/bin/vendor_perl:\
 $HOME/.cabal/bin:/usr/bin/core_perl:\
-$HOME/.gem/ruby/2.3.0/bin"
+$HOME/.gem/ruby/2.3.0/bin":\
+/usr/local/sbin
 
 export LD_LIBRARY_PATH="/usr/local/lib"
 export KEYTIMEOUT=1
@@ -43,7 +46,7 @@ unsetopt histverify
 setopt APPEND_HISTORY
 
 alias vim=nvim
-alias t='LOCATION_QUERY=yeh LOGFILE=/home/t/src/void/debug.log ~/src/void/target/release/void /home/t/Dropbox/t.db'
+alias t='LOCATION_QUERY=yeh LOGFILE=/Users/tylerneely/src/void/debug.log ~/src/void/target/release/void /Users/tylerneely/.void.db'
 alias cb='cargo build'
 alias cw="cargo watch -s 'clear; cargo check --tests --color=always 2>&1 | head -40'"
 alias tf='terraform'
