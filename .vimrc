@@ -20,6 +20,8 @@ nnoremap <C-i> <C-i>zz
 nnoremap <C-j> :lnext<CR>zz
 
 command! W write
+command! Wq wq
+command! WQ wq
 command! Q quit
 command! Qall quitall
 
@@ -63,6 +65,12 @@ set foldlevel=0
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+" open new files in their own tab with ctrlp
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
+    \ 'AcceptSelection("t")': ['<cr>'],
+    \ }
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
