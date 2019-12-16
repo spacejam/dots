@@ -4,12 +4,9 @@ export JAVA_HOME=/usr/lib/jvm/default
 export ZSH=$HOME/.oh-my-zsh
 export RUST_BACKTRACE=1
 export RUSTFLAGS="-C target-cpu=native"
-export RUSTC_WRAPPER=sccache
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export SKIM_DEFAULT_COMMAND="rg --files"
-export SCCACHE_DIR=/Users/tylerneely/Library/Caches/Mozilla.sccache
-export SCCACHE_CACHE_SIZE=53687091200
 
 export PATH="$HOME/bin:\
 /usr/bin:\
