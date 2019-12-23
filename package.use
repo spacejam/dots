@@ -1,0 +1,28 @@
+sys-kernel/debian-sources binary
+sys-boot/grub device-mapper
+sys-kernel/genkernel crypt cryptsetup
+dev-libs/json-c static-libs
+dev-libs/libgpg-error static-libs
+sys-fs/lvm2 static-libs
+dev-libs/openssl static-libs
+dev-libs/popt static-libs
+app-crypt/argon2 static-libs
+sys-fs/cryptsetup static
+x11-libs/cairo xcb X
+x11-libs/libxcb xkb
+x11-libs/pango X
+x11-libs/libxkbcommon X
+dev-lua/mpack luajit
+dev-lua/lpeg luajit
+media-libs/libepoxy X
+media-libs/gd truetype jpeg png fontconfig
+www-client/w3m imlib
+x11-libs/pango introspection
+x11-libs/gtk+ introspection
+x11-libs/gdk-pixbuf introspection
+app-text/ghostscript-gpl cups
+dev-libs/atk introspection
+dev-libs/libpcre2 pcre16
+x11-terms/rxvt-unicode 256-color unicode3 xft
+app-misc/powerline fonts
+app-benchmarks/bootchart2 svg

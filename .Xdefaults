@@ -34,7 +34,7 @@
 ! u r x v t
 
 URxvt*geometry:         112x22
-URxvt*font:               xft:xos4 terminus:size=13
+URxvt*font:               xft:Terminus:size=12
 URxvt*urlLauncher:        firefox
 URxvt*scrollBar:          false
 URxvt*scrollBar_right:        true
