@@ -22,7 +22,8 @@ $HOME/.gem/ruby/2.2.0/bin:\
 /usr/bin/vendor_perl:\
 $HOME/.cabal/bin:/usr/bin/core_perl:\
 $HOME/.gem/ruby/2.3.0/bin":\
-/usr/local/sbin
+/usr/local/sbin:\
+/usr/lib/llvm/8/bin
 
 export LD_LIBRARY_PATH="/usr/local/lib"
 export KEYTIMEOUT=1
