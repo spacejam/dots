@@ -31,7 +31,7 @@ set undolevels=1000
 set undoreload=10000
 
 set hidden          " don't save file every time we goto rust def
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,*.jar,*/target/*
+set wildignore+=Cargo.lock,*/tmp/*,*.so,*.swp,*.zip,*.class,*.jar,*/target/*
 set t_Co=256
 set shell=/bin/bash
 set tags=.haskelltags;tags;/,codex.tags;/
