@@ -4,6 +4,7 @@ export JAVA_HOME=/usr/lib/jvm/default
 export ZSH=$HOME/.oh-my-zsh
 export RUST_BACKTRACE=1
 export RUSTFLAGS="-C target-cpu=native"
+export RUST_SRC_PATH=`rustc +nightly --print sysroot`/lib/rustlib/src/rust/library
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export SKIM_DEFAULT_COMMAND="rg --files"
@@ -43,8 +44,10 @@ unsetopt histverify
 # Causes history to be shared, but not incrementally appended (oh-my-zsh default)
 setopt APPEND_HISTORY
 
+alias gpom='git pull origin main'
+alias xo='xclip -o'
 alias vim=nvim
-alias t='LOCATION_QUERY=yeh LOGFILE=/Users/tylerneely/src/void/debug.log ~/src/void/target/release/void /Users/tylerneely/.void.db'
+alias t='LOGFILE=~/src/void/debug.log ~/src/void/target/release/void'
 alias cb='cargo build'
 alias cw="cargo watch -s 'clear; cargo check --tests --color=always 2>&1 | head -40'"
 alias tf='terraform'
@@ -57,6 +60,8 @@ alias tmux='tmux -u'
 alias v='vim `sk`'
 alias cachegrind='valgrind --tool=cachegrind'
 alias callgrind='valgrind --tool=callgrind --dump-instr=yes --collect-jumps=yes --simulate-cache=yes'
+alias sb='pushd benchmarks/stress2; cargo run --release -- $@; popd'
+alias sbc='rm -rf benchmarks/stress2/default.sled'
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f /home/t/src/google-cloud-sdk/path.zsh.inc ]; then
@@ -71,3 +76,10 @@ fi
 function retry {
   while true; do $*; if [ $? -ne 0 ]; then break; fi; done
 }
+
+function stacktrace {
+  sudo gdb --batch -ex "t a a bt" -p `pgrep $1`
+}
+
+# opam configuration
+test -r /home/t/.opam/opam-init/init.zsh && . /home/t/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
