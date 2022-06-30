@@ -4,7 +4,7 @@ filetype plugin indent on
 
 " nnoremap <C-v> :read !xclip -o<CR>
 nnoremap <C-n> :tabnext<CR>
-nnoremap <C-m> :tabprevious<CR>
+nnoremap <C-e> :tabprevious<CR>
 nnoremap ts :tab sball<CR>
 nnoremap tt :! ctags -R .<CR> :set tags=./tags,tags;<CR>
 nmap f <Plug>(easymotion-s2)
@@ -66,16 +66,18 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_cpp_compiler_options = "-std=c++20 -Wall -Wextra -Wpedantic"
+
 " open new files in their own tab with ctrlp
 let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
     \ 'AcceptSelection("t")': ['<cr>'],
     \ }
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
 
 let g:rainbow_active = 1
 let g:rustfmt_autosave = 1
